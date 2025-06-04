@@ -51,7 +51,7 @@
         .header {
             background: linear-gradient(120deg, var(--primary), var(--summer-grass));
             color: var(--white);
-            padding: 25px 20px;
+            padding: 30px 20px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -83,16 +83,16 @@
 
         .app-title {
             font-family: 'Comfortaa', cursive;
-            font-size: 28px;
+            font-size: 30px;
             font-weight: 700;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             position: relative;
             z-index: 1;
             text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
 
         .app-subtitle {
-            font-size: 16px;
+            font-size: 18px;
             opacity: 0.9;
             position: relative;
             z-index: 1;
@@ -119,7 +119,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             text-align: center;
-            margin: 15px 0;
+            margin: 20px 0; /* Увеличил отступы */
             position: relative;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -146,9 +146,10 @@
         .btn-primary {
             background: linear-gradient(120deg, var(--secondary), var(--summer-sun));
             color: var(--dark);
-            font-size: 20px;
+            font-size: 22px; /* Увеличил шрифт */
             padding: 22px;
             letter-spacing: 1px;
+            margin-top: 30px; /* Больше отступ сверху */
         }
 
         .btn-secondary {
@@ -164,20 +165,21 @@
         .btn-back {
             background: var(--light-gray);
             color: var(--dark);
-            margin-top: 10px;
+            margin-top: 20px; /* Увеличил отступ */
         }
 
         .idea-card {
             background: linear-gradient(135deg, var(--white), #f9f9f9);
             border-radius: 16px;
-            padding: 25px;
-            margin: 20px 0;
+            padding: 30px; /* Увеличил отступы */
+            margin: 25px 0; /* Больше отступы сверху/снизу */
             box-shadow: 0 8px 16px rgba(0,0,0,0.08);
             border: 1px solid rgba(0,0,0,0.05);
             text-align: center;
             position: relative;
             transform-style: preserve-3d;
             transition: transform 0.6s;
+            min-height: 280px; /* Минимальная высота карточки */
         }
 
         .idea-card.flipped {
@@ -195,7 +197,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 25px;
+            padding: 30px; /* Увеличил внутренние отступы */
         }
 
         .idea-card-front {
@@ -207,41 +209,42 @@
         }
 
         .idea-text {
-            font-size: 20px;
-            line-height: 1.5;
-            margin-bottom: 25px;
+            font-size: 22px; /* Увеличил шрифт */
+            line-height: 1.6; /* Больше межстрочный интервал */
+            margin-bottom: 40px; /* Больше отступ снизу */
+            padding: 0 10px; /* Отступы по бокам */
         }
 
         .idea-number {
             position: absolute;
-            top: 15px;
-            right: 15px;
+            top: 20px; /* Отступ сверху */
+            right: 20px; /* Отступ справа */
             background: var(--primary);
             color: white;
-            width: 40px;
-            height: 40px;
+            width: 45px; /* Увеличил размер */
+            height: 45px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            font-size: 18px;
+            font-size: 20px; /* Увеличил шрифт */
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
         .btn-another {
             background: var(--primary);
             color: white;
-            padding: 12px 25px;
+            padding: 15px 30px; /* Увеличил размер кнопки */
             border-radius: 30px;
-            font-size: 16px;
+            font-size: 18px; /* Увеличил шрифт */
             border: none;
             cursor: pointer;
             transition: all 0.3s;
             box-shadow: 0 3px 6px rgba(0,0,0,0.16);
             position: absolute;
-            bottom: 15px;
-            right: 15px;
+            bottom: 20px; /* Отступ снизу */
+            right: 20px; /* Отступ справа */
         }
 
         .btn-another:hover {
@@ -252,14 +255,14 @@
         .list-container {
             max-height: 500px;
             overflow-y: auto;
-            margin: 20px 0;
-            padding-right: 5px;
+            margin: 25px 0; /* Увеличил отступы */
+            padding-right: 10px;
         }
 
         .idea-item {
             display: flex;
             align-items: flex-start;
-            padding: 15px;
+            padding: 18px 15px; /* Увеличил отступы */
             border-bottom: 1px solid var(--light-gray);
             transition: background 0.3s;
         }
@@ -273,58 +276,59 @@
         }
 
         .idea-checkbox {
-            margin-right: 15px;
-            margin-top: 4px;
-            width: 22px;
-            height: 22px;
+            margin-right: 18px; /* Увеличил отступ */
+            margin-top: 5px;
+            width: 24px; /* Увеличил размер */
+            height: 24px;
             accent-color: var(--primary);
         }
 
         .idea-content {
             flex: 1;
-            font-size: 16px;
-            line-height: 1.4;
+            font-size: 17px; /* Увеличил шрифт */
+            line-height: 1.5; /* Больше межстрочный интервал */
+            padding-right: 10px;
         }
 
         .progress-container {
             background: rgba(129, 199, 132, 0.2);
             border-radius: 12px;
-            padding: 15px;
-            margin: 20px 0;
+            padding: 20px; /* Увеличил отступы */
+            margin: 25px 0; /* Больше отступы */
             text-align: center;
         }
 
         .progress-title {
-            font-size: 18px;
+            font-size: 20px; /* Увеличил шрифт */
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 15px; /* Увеличил отступ */
             color: var(--primary-dark);
         }
 
         .progress-bar {
-            height: 20px;
+            height: 22px; /* Увеличил высоту */
             background: var(--light-gray);
-            border-radius: 10px;
+            border-radius: 12px; /* Больше скругление */
             overflow: hidden;
-            margin-bottom: 10px;
+            margin-bottom: 15px; /* Увеличил отступ */
         }
 
         .progress-fill {
             height: 100%;
             background: linear-gradient(90deg, var(--primary-light), var(--primary));
-            border-radius: 10px;
+            border-radius: 12px;
             transition: width 0.5s ease;
         }
 
         .progress-text {
-            font-size: 16px;
+            font-size: 18px; /* Увеличил шрифт */
             font-weight: 600;
             color: var(--primary-dark);
         }
 
         .flip-icon {
-            font-size: 50px;
-            margin-bottom: 15px;
+            font-size: 60px; /* Увеличил размер иконки */
+            margin-bottom: 25px; /* Больше отступ снизу */
             color: var(--accent);
             animation: pulse 2s infinite;
         }
@@ -337,25 +341,38 @@
 
         .footer {
             text-align: center;
-            padding: 15px;
+            padding: 20px; /* Увеличил отступы */
             color: var(--gray);
-            font-size: 14px;
+            font-size: 16px; /* Увеличил шрифт */
             background: rgba(0,0,0,0.02);
             border-top: 1px solid rgba(0,0,0,0.05);
         }
 
         @media (max-width: 480px) {
             .app-title {
-                font-size: 24px;
+                font-size: 26px;
+            }
+            
+            .app-subtitle {
+                font-size: 16px;
             }
             
             .idea-text {
-                font-size: 18px;
+                font-size: 20px;
             }
             
             .btn-primary {
-                font-size: 18px;
+                font-size: 20px;
                 padding: 20px;
+            }
+            
+            .idea-card {
+                min-height: 250px;
+                padding: 25px;
+            }
+            
+            .idea-content {
+                font-size: 16px;
             }
         }
     </style>
