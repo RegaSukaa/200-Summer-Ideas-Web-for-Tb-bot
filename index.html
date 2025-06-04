@@ -367,6 +367,82 @@
             transform: translateY(-2px);
         }
 
+        /* Welcome Popup */
+        .welcome-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: fadeIn 0.5s;
+        }
+
+        .welcome-content {
+            background: linear-gradient(135deg, #fff9c4, #ffecb3);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 90%;
+            width: 500px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 3px solid #FF9800;
+            position: relative;
+        }
+
+        .welcome-content h2 {
+            color: #E65100;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .welcome-content p {
+            font-size: 18px;
+            margin: 15px 0;
+            line-height: 1.6;
+            color: #5D4037;
+        }
+
+        .welcome-content ul {
+            text-align: left;
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+
+        .welcome-content li {
+            margin: 12px 0;
+            font-size: 17px;
+            color: #4E342E;
+        }
+
+        #closeWelcome {
+            background: linear-gradient(to right, #4CAF50, #8BC34A);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        #closeWelcome:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
         @media (max-width: 480px) {
             .app-title {
                 font-size: 26px;
@@ -393,10 +469,38 @@
             .idea-content {
                 font-size: 16px;
             }
+
+            .welcome-content {
+                padding: 20px;
+            }
+
+            .welcome-content h2 {
+                font-size: 24px;
+            }
+
+            .welcome-content p {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Welcome Popup -->
+    <div class="welcome-popup" id="welcomePopup">
+        <div class="welcome-content">
+            <h2>Привет, летний искатель приключений! 🌞</h2>
+            <p>Добро пожаловать в "200 идей на лето"! 🎉</p>
+            <p>Здесь ты найдешь вдохновение для самых ярких летних дней:</p>
+            <ul>
+                <li>☀️ Нажимай "Идея на лето" для случайного приключения</li>
+                <li>📝 Отмечай выполненные идеи в полном списке</li>
+                <li>🏆 Следи за своим летним прогрессом</li>
+            </ul>
+            <p>Пусть это лето станет самым незабываемым! 🌈✨</p>
+            <button id="closeWelcome">Начать лето! 🚀</button>
+        </div>
+    </div>
+
     <div class="app-container">
         <div class="header">
             <h1 class="app-title">200 идей на лето</h1>
@@ -708,6 +812,22 @@
                     showRandomIdea();
                 }
             });
+            
+            // Показ приветственного сообщения
+            const welcomePopup = document.getElementById('welcomePopup');
+            const closeWelcome = document.getElementById('closeWelcome');
+            
+            // Проверяем, показывали ли уже приветствие
+            if (!localStorage.getItem('welcomeShown')) {
+                welcomePopup.style.display = 'flex';
+                
+                closeWelcome.addEventListener('click', function() {
+                    welcomePopup.style.display = 'none';
+                    localStorage.setItem('welcomeShown', 'true');
+                });
+            } else {
+                welcomePopup.style.display = 'none';
+            }
         });
 
         // Показать случайную идею
